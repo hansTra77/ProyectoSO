@@ -1,4 +1,4 @@
-# ProyectoSO
+# Mini Proyecto Sistemas Operacionales
 **Universidad Icesi**  
 **Curso:** Sistemas Operativos  
 **Docente:** Daniel Barragán C.  
