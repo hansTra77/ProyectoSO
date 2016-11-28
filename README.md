@@ -4,6 +4,9 @@
 **Docente:** Daniel Barragán C.  
 **Tema:**  Servicios web  
 **Estudiantes:** 
+José Luis Osorio Quintero 12203012
+Juan David Cardona Mena 13103002
+Juan Pablo Medina Mora 11112010
 
 ## Objetivos
 * Desplegar una aplicación en un servidor que ejecuta el sistema operativo Linux
@@ -11,35 +14,47 @@
 * Realizar aplicaciones para obtener información del sistema operativo
 
 ## Descripción
-Para el despliegue de una aplicación en un servidor se requiere conocer los procedimientos necesarios relacionados con la configuracion de las interfaces de red, ajustes de seguridad, instalación de dependencias, usuarios y herramientas de depuracíon del sistema operativo.
+Para el despliegue de una aplicación en un servidor se requiere conocer los procedimientos necesarios relacionados con la configuración de las interfaces de red, ajustes de seguridad, instalación de dependencias, usuarios y herramientas de depuración del sistema operativo.
 
 El siguiente proyecto consiste en el despliegue de una aplicación web para obtener información del sistema operativo (Deberá emplear la aplicación desarrollada en el primer parcial). Para este propósito se debe emplear el sistema operativo CentOS7, el microframework flask y ambientes virtuales.
 
-## Desarrollo
-En el presente apartado se explicara todo el proceso realizado para la resolucion del taller, desde la instalacion de la maquina virtual hasta la prueba del servicio web usando Paperman y netstat.
+![][17]
 
-### Instalacion del sistema operativo CentOS 7 y de interfaces de red
-Para la instalacion del sistema CentOS 7 se procedio a descargar una imagen del sistema operativo, en especifico el centos 7 x86 64 minimal. Con esta imagen descargada se procedio a realizar la instalacion de la maquina virtual en el programa VirtualBox,inicialmente se creo el usuario administrador para despues configurar la memoria y demas apartados del sistema incluyendo los adaptadores de red puente y NAT. 
-Al iniciar sesion con las creedenciales para el usuario raiz creado, se procedio a probar que la configuracion de los adaptadores de red hubiese sido exitosa, esto por medio de la realizacion de pings y posteriormente por medio de la conexion al programa putty.
+## Desarrollo
+En el presente apartado se explicará todo el proceso realizado para la resolución del taller, desde la instalación de la máquina virtual hasta la prueba del servicio web usando Paperman y netstat.
+
+### Instalación del sistema operativo CentOS 7 y de interfaces de red
+Para la instalación del sistema CentOS 7 se procedió a descargar una imagen del sistema operativo, en específico el centos 7 x86 64 minimal. Con esta imagen descargada se procedió a realizar la instalación de la máquina virtual en el programa VirtualBox,inicialmente se creó el usuario administrador para después configurar la memoria y demás apartados del sistema incluyendo los adaptadores de red puente y NAT. El proceso de muestra a continuación.
+
+![][1]
+![][2]
+![][3]
+
+Al iniciar sesión con las credenciales para el usuario raíz creado, se procedió a probar que la configuración de los adaptadores de red hubiese sido exitosa, esto por medio de la realización de pings y posteriormente por medio de la conexión al programa putty.
 
 ```
 # ping 8.8.8.8
 ```
 
-Con esto se finalizo la instalacion y configuracion basica del sistema operativo.
+Con esto se finalizó la instalación y configuración básica del sistema operativo.
 
 ### Configuración de puertos
-En la actualizacion a CentOS 7 uno de los cambios principales al sistema fue el reemplazo del archivo de configuracion iptables,en esta version para realizar la configuracion de puertos se usa el componente FirewallD. Para realizar esta configuracion se opto por desactivar el componente FirewallD, e instalar posteriormente el componente iptables, en el cual se procedio a realizar la configuracion, en especifico se habilito el puerto 8088.
+En la actualización a CentOS 7 uno de los cambios principales al sistema fue el reemplazo del archivo de configuración iptables, en esta versión para realizar la configuración de puertos se usa el componente FirewallD. Para realizar esta configuración se optó por desactivar el componente FirewallD, e instalar posteriormente el componente iptables, en el cual se procedió a realizar la configuración, en específico se habilito el puerto 8088.
 
 ```
 # cat /etc/sysconfig/iptables
 # service iptables restart
 ```
+
+![][4]
+![][5]
+![][6]
+
 Con lo anterior el puerto del que hace uso el servicio queda habilitado.
 
-### Creación del usuario filesystem_user, creacion de ambiente virtual e instalación de flask y sus dependencias
+### Creación del usuario filesystem_user, creación de ambiente virtual e instalación de flask y sus dependencias
 
-Con el las configuraciones iniciales pertinentes terminadas el primer paso para hacer uso de los programas consistió en la creación de un nuevo usuario, para tal fin se siguió el siguiente procedimiento
+Con las configuraciones iniciales pertinentes terminadas el primer paso para hacer uso de los programas consistió en la creación de un nuevo usuario, para tal fin se siguió el siguiente procedimiento
 
 ```
 # adduser filesystem_user
@@ -68,8 +83,11 @@ Después se procedió a instalar Flask en el nuevo ambiente virtual
 ```
 $ pip install Flask
 ```
+
+![][7]
+
 ### Aplicación en Python
-A continuacion se presentan los contratos del servicio desplegado.
+A continuación, se presentan los contratos del servicio desplegado.
 
 Descripción de las URIs
 
@@ -112,7 +130,7 @@ Descripción del formato de intercambio de datos (JSON)
 }
 ```
 
-A continuacion se presentan los archivos que se usaron para correr los servicios.
+A continuación, se presentan los archivos que se usaron para correr los servicios.
 
 Archivo functions.py
 ```python
@@ -205,16 +223,37 @@ def func3():
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port=8088,debug='True')
 ```
-Con los scripts realizados se procedio a realizar pruebas con la finalidad de saber si los servicios al levantarce eran accesibles.
+Con los scripts realizados se procedió a realizar pruebas con la finalidad de saber si los servicios al levantarse eran accesibles.
 
 Primero se levanta el servicio
 
 ```
-$ (flask_env) python files.py
+$ (flask_env) python mainScript.py
 ```
-Despues se procedio a probar por medio del navegador si se podia accesar al servicio POST.
 
-Comprobado el servicio con el navegador se procedio a comprobar el funcionamiento de los diferentes servicios por medio del programa Postman.
+![][8]
+
+Después se decidió probar por medio del navegador si se podía acceder al servicio POST.
+
+![][9]
+
+Y se pudo observar cómo se podía contactar con todas las funciones del servicio expuesto.
+
+![][10]
+
+Comprobado el servicio con el navegador se comprobó el funcionamiento de los diferentes servicios por medio del programa Postman.
+
+**files GET**
+
+![][11]
+
+**files POST**
+
+![][12]
+
+**recently created GET**
+
+![][13]
 
 ### Validación de la ejecución del servicio (netstat)
 
@@ -223,6 +262,47 @@ netstat (estadísticas de red) es una herramienta de la línea de comandos para 
 
 Esta herramienta es muy importante y muy útil para los administradores de red de Linux, así como para los administradores de sistemas para supervisar y solucionar los problemas relacionados con la red y determinar el rendimiento del tráfico de red. Este artículo muestra los usos del comando netstat con sus ejemplos que pueden ser útiles en la operación diaria.
 
+#### Usando netstat -putona
+Con el fin de realizar la comprobación de servicios se descargó e instalo el servicio netstat y se hizo uso del comando -putona, que nos permite ver que puertos despliegan un determinado proceso.
+
+p Muestra las conexiones para el protocolo especificado que puede ser TCP o UDP
+u Lista todos los puertos UDP
+t Lista todos los puertos TCP
+o Muestra los timers
+n Muestra el número de puerto
+a Visualiza todas las conexiones activas del sistema
+
+A continuación, se presentan los resultados obtenidos.
+Iniciando con la realización del comando sin tener el servicio levantado, como puede observarse en la lista de salida no figura el puerto 8088, el encargado de correr el servicio según lo que se escribió en el script.
+
+![][14]
+
+En las siguientes imágenes se puede observar el resultado del comando tras levantar el servicio, puede observarse que el puerto 8088 aparece en la lista, y que el servicio que por el corre es python.
+
+![][15]
+![][16]
+
+Con lo anterior se concluye que el servicio se encuentra en correcto funcionamiento y se da por finalizado el proyecto.
 
 
+## Referencias
+https://ubuntulife.wordpress.com/2014/03/11/netstat-putona-un-comando-que-no-olvidaras-para-monitorizar-las-conexiones-en-linux/
 
+
+[1]: capturascentos7/0.JPG
+[2]: capturascentos7/1.JPG
+[3]: capturascentos7/2.JPG
+[4]: capturascentos7/3.JPG
+[5]: capturascentos7/4.JPG
+[6]: capturascentos7/5.JPG
+[7]: capturascentos7/6.JPG
+[8]: capturascentos7/7.JPG
+[9]: capturascentos7/8.JPG
+[10]: capturascentos7/9.JPG
+[11]: capturascentos7/10.JPG
+[12]: capturascentos7/11.JPG
+[13]: capturascentos7/12.JPG
+[14]: capturascentos7/13.JPG
+[15]: capturascentos7/14.JPG
+[16]: capturascentos7/15.JPG
+[17]: capturascentos7/16.JPG
