@@ -4,9 +4,9 @@
 **Docente:** Daniel Barragán C.  
 **Tema:**  Servicios web  
 **Estudiantes:** 
-José Luis Osorio Quintero 12203012
-Juan David Cardona Mena 13103002
-Juan Pablo Medina Mora 11112010
+José Luis Osorio Quintero 12203012  
+Juan David Cardona Mena 13103002  
+Juan Pablo Medina Mora 11112010  
 
 ## Objetivos
 * Desplegar una aplicación en un servidor que ejecuta el sistema operativo Linux
