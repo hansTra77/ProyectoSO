@@ -289,20 +289,20 @@ Con lo anterior se concluye que el servicio se encuentra en correcto funcionamie
 https://ubuntulife.wordpress.com/2014/03/11/netstat-putona-un-comando-que-no-olvidaras-para-monitorizar-las-conexiones-en-linux/
 
 
-[1]: capturascentos7/0.JPG
-[2]: capturascentos7/1.JPG
-[3]: capturascentos7/2.JPG
-[4]: capturascentos7/3.JPG
-[5]: capturascentos7/4.JPG
-[6]: capturascentos7/5.JPG
-[7]: capturascentos7/6.JPG
-[8]: capturascentos7/7.JPG
-[9]: capturascentos7/8.JPG
-[10]: capturascentos7/9.JPG
-[11]: capturascentos7/10.JPG
-[12]: capturascentos7/11.JPG
-[13]: capturascentos7/12.JPG
-[14]: capturascentos7/13.JPG
-[15]: capturascentos7/14.JPG
-[16]: capturascentos7/15.JPG
-[17]: capturascentos7/16.JPG
+[1]: capturascentos7/0.png
+[2]: capturascentos7/1.png
+[3]: capturascentos7/2.png
+[4]: capturascentos7/3.png
+[5]: capturascentos7/4.png
+[6]: capturascentos7/5.png
+[7]: capturascentos7/6.png
+[8]: capturascentos7/7.png
+[9]: capturascentos7/8.png
+[10]: capturascentos7/9.png
+[11]: capturascentos7/10.png
+[12]: capturascentos7/11.png
+[13]: capturascentos7/12.png
+[14]: capturascentos7/13.png
+[15]: capturascentos7/14.png
+[16]: capturascentos7/15.png
+[17]: capturascentos7/16.png
